@@ -1,0 +1,26 @@
+<template name="Audio">
+{{> ShowAudio }}
+
+</template>
+
+<template name="ShowAudio">
+
+  <div class="playlist animated fadeIn">
+    <audio src="https://s3-us-west-2.amazonaws.com/pajaros/Acciones Grabadas/Berenice Guraieb - Quijada de Burro.mp3" preload="false"></audio>
+
+    <ol>
+      {{#each audios }}
+        <li><a data-src="{{ url }}" href="#">{{ title }}</a></li>
+      {{/each}}
+    </ol>
+  </div>
+
+  <div id="shortcuts">
+    <div>
+      <h1>Keyboard shortcuts:</h1>
+      <p><em>&rarr;</em> Next track</p>
+      <p><em>&larr;</em> Previous track</p>
+      <p><em>Space</em> Play/pause</p>
+    </div>
+  </div>
+</template>

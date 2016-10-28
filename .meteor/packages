@@ -1,0 +1,31 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+tap:i18n
+accounts-password
+alanning:roles
+twbs:bootstrap-noglyph
+iron:router
+mrt:accounts-admin-ui-bootstrap-3
+stylus
+natestrauser:animate-css
+markdown
+dschulz:jquery-qrcode
+lookback:body-class
+sergeyt:gist
+okgrow:iron-router-autoscroll
+underscorestring:underscore.string
+accounts-ui
+ryw:blog
+tap:i18n-db
+percolate:momentum
+reactive-var
+reactive-dict
+nolimits4web:swiper
+mizzao:autocomplete
+babrahams:editable-text
+babrahams:editable-text-wysiwyg-bootstrap-3

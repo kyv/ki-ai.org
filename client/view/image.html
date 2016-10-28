@@ -1,0 +1,26 @@
+<template name="Image">
+  {{> Mix }}
+
+  {{#loadingWhile mixed }}
+    <div class="mix-spinner animated fadeIn">
+      <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+  {{/loadingWhile}}
+
+  {{#loadingUntil mixed }}
+    {{> imagesSlider }}
+  {{/loadingUntil}}
+
+</template>
+
+<template name="imagesSlider">
+    <div id="slider" class="flexslider animated fadeIn">
+        <ul class="slides">
+        {{#each images}}
+            <li>
+                <img src="{{this.url}}"/>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+</template>

@@ -1,0 +1,8 @@
+*.lock
+bundle.tar.gz
+bundle
+.bundle
+lib/config.js
+server/kadira.js
+backups
+dump

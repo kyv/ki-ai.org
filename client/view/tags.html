@@ -1,0 +1,9 @@
+<template name="Tags">
+<div class="tag-list">
+  {{#each tags}}
+    <a class="tag" href="/blog/tag/{{this}}"> {{this}}</a>~
+  {{else}}
+    No tags yet...
+  {{/each}}
+</div>
+</template>

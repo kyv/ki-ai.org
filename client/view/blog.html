@@ -1,0 +1,83 @@
+<template name="myBlogIndexTemplate">
+  <div id="meteor-blog" class="blog-list">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          {{> myblogIndexLoop}}
+          {{blogPager}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="myblogIndexLoop">
+  {{#each posts}}
+    <article class="post">
+      <div class="row animated fadeIn">
+        {{#if featuredImage}}
+          <div class="col-md-3">
+            <a href="{{pathFor 'blogShow'}}" class="thumbnail">
+              <img src="{{featuredImage}}" alt="" class="img-responsive">
+            </a>
+          </div>
+        {{/if}}
+        <div class="{{#if featuredImage}}col-md-9{{else}}col-md-12{{/if}}">
+          <h2>
+            <a href="{{pathFor 'blogShow'}}">{{title}}</a>
+          </h2>
+          <div class="post-meta">
+            {{blogFormatDate publishedAt}}
+            {{> blogTags }}
+          </div>
+          <div class="the-content">
+            <small>{{{excerpt}}}</small>
+          </div>
+        </div>
+        </div>
+    </article>
+  {{else}}
+    This blog is looking pretty empty...
+  {{/each}}
+</template>
+
+<template name="myShowBlogTemplate">
+  <div id="meteor-blog" class="blog-single animated fadeIn">
+    {{#if session "postHasFeaturedImage"}}
+      {{> blogShowFeaturedImage}}
+    {{/if}}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-11 col-md-10">
+          {{> myblogShowBody}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="myblogShowBody">
+  <article class="post">
+    {{#unless titleBackground}}
+      <h1 class="mb-title text-center">
+        {{title}}
+      </h1>
+      <div class="post-meta text-center">
+        {{#if isAdmin}}
+           <small><a href="#" id="edit-post">edit</a></small>
+           --
+        {{/if}}
+        {{blogFormatDate publishedAt}}
+        {{> blogTags }}
+      </div>
+    {{/unless}}
+    <div id="commentable-area" class="the-content">
+      {{{html}}}
+    </div>
+  </article>
+  <div class="blog-back-link pull-left">
+    <a href="{{pathFor 'blogIndex'}}"><i class="fa fa-caret-left"></i>Back to the Blog</a>
+  </div>
+  {{> shareit}}
+  {{> disqus this}}
+</template>

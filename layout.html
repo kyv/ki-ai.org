@@ -1,0 +1,55 @@
+<head>
+  <title>ki-ai.org</title>
+  <link rel="icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" type="application/rss+xml" title="ki-ai.org" href="/rss/posts">
+</head>
+
+<template name="Layout">
+  <header>
+    <h1>{{title}}</h1>
+    <nav>
+        {{> headNav }}
+    <ul class="nav pull-right">
+      <li>{{> loginButtons align="right"}}</li>
+    </ul>
+  </nav>
+  </header>
+
+<div id="content" class="container">
+
+    <div class="row">
+
+        <article class="col-md-10 centered-block">
+            {{> logo}}
+            {{> yield}}
+        </article>
+
+    </div>
+
+</div>
+
+    <footer id="footer" class="container">
+        {{> yield "Footer"}}
+    </footer>
+
+</template>
+
+<template name="logo">
+
+  <div class="header animated fadeIn">
+    <div class="logo-container">
+      <a href="/" class="logo">
+        <img class="img-responsive" src="/images/logo.png"/>
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="Footer">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-6">
+           Ki-Ai.Org
+        </div>
+    </div>
+</template>
